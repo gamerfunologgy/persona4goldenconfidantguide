@@ -1,0 +1,209 @@
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* ===== P4G COLOR PALETTE ===== */
+      :root {
+          --p4-yellow: #f7c600;
+          --p4-yellow-bright: #ffdd33;
+          --p4-black: #111;
+          --p4-dark: #000;
+          --p4-border: #222;
+      }
+
+      body {
+          background: var(--p4-yellow);
+          color: var(--p4-black);
+      }
+
+      /* HEADER */
+      header {
+          position: sticky;
+          top: 0;
+          z-index: 1000;
+          background: var(--p4-black);
+          color: var(--p4-yellow);
+          padding: 14px 16px;
+          font-size: 18px;
+          font-weight: bold;
+          border-bottom: 4px solid var(--p4-dark);
+          box-shadow: 0 3px 0 var(--p4-dark);
+      }
+
+      /* LINK */
+      a.button {
+          text-decoration: none;
+          display: inline-block;
+          margin: 12px 0 18px;
+          padding: 8px 16px;
+          font-size: 14px;
+          font-weight: bold;
+          color: var(--p4-yellow);
+          background-color: var(--p4-black);
+          border: 2px solid var(--p4-black);
+          border-radius: 6px;
+      }
+
+      /* MAIN */
+      main {
+          padding: 70px 16px 20px;
+          max-width: 1300px;
+          margin: auto;
+      }
+
+      /* SECTION HEADINGS */
+      h2 {
+          margin-top: 28px;
+          border-left: 6px solid var(--p4-black);
+          padding-left: 10px;
+          font-size: 20px;
+      }
+
+      .note {
+          color: var(--p4-black);
+          margin-top: 12px;
+          font-size: 14px;
+          font-weight: bold;
+      }
+
+      /* ========= BENEFITS TABLE ========= */
+
+      .table-scroll {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          margin-top: 16px;
+      }
+
+      .confidant-table {
+          list-style: none;
+          min-width: 520px;
+      }
+
+      .confidant-row {
+          display: grid;
+          grid-template-columns: 90px 220px 1fr;
+          gap: 20px;
+          padding: 14px;
+          border-bottom: 3px solid var(--p4-dark);
+          align-items: start;
+          background: var(--p4-black);
+          color: var(--p4-yellow);
+          transition: 0.2s ease;
+      }
+
+      .confidant-row:hover {
+          background: #1a1a1a;
+          box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
+      }
+
+      .confidant-header {
+          font-weight: bold;
+          border-bottom: 4px solid var(--p4-yellow);
+          background: var(--p4-dark);
+      }
+
+      .confidant-row>span {
+          white-space: normal;
+      }
+
+      .table-scroll::-webkit-scrollbar {
+          height: 8px;
+      }
+
+      .table-scroll::-webkit-scrollbar-thumb {
+          background: var(--p4-black);
+          border-radius: 4px;
+      }
+
+      .rank {
+          font-weight: bold;
+          letter-spacing: 1px;
+      }
+
+      /* ========= DIALOGUE TABLE ========= */
+
+      .rank-dialogue {
+          list-style: none;
+          min-width: 720px;
+      }
+
+      .rank-row {
+          display: grid;
+          grid-template-columns: 140px repeat(3, 1fr);
+          gap: 20px;
+          padding: 16px 14px;
+          border-bottom: 3px solid var(--p4-dark);
+          background: var(--p4-black);
+          color: var(--p4-yellow);
+          align-items: center;
+          transition: 0.2s ease;
+      }
+
+      .rank-row:hover {
+          background: #1a1a1a;
+          box-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
+      }
+
+      .rank-label {
+          font-weight: bold;
+          letter-spacing: 1px;
+      }
+
+      .rank-row>span {
+          min-width: 0;
+      }
+
+      .choice-cell {
+          padding-left: 10px;
+      }
+
+      /* ========= TABLET ========= */
+      @media (min-width: 600px) {
+          header {
+              font-size: 20px;
+              padding: 16px 20px;
+          }
+
+          main {
+              padding: 80px 20px 20px;
+          }
+
+          .confidant-row {
+              grid-template-columns: 80px 180px 1fr;
+              gap: 16px;
+          }
+
+          .rank-row {
+              grid-template-columns: 120px repeat(2, 1fr);
+              gap: 16px;
+          }
+
+          .choice-cell {
+              padding-left: 0;
+          }
+      }
+
+      /* ========= DESKTOP ========= */
+      @media (min-width: 900px) {
+          header {
+              font-size: 22px;
+              padding: 18px 30px;
+          }
+
+          .confidant-row {
+              grid-template-columns: 90px 220px 1fr;
+              padding: 16px 14px;
+          }
+
+          .rank-row {
+              grid-template-columns: 140px repeat(3, 1fr);
+              padding: 16px 14px;
+          }
+
+          h2 {
+              font-size: 22px;
+          }
+      }

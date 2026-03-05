@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f7c600;
+    /* P4G Yellow */
+    color: #111;
+}
+
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #111;
+    color: #f7c600;
+    padding: 16px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 3px solid #000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 16px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 14px;
+}
+
+/* TILE */
+.tile {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border: 3px solid #111;
+    background: #000;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s ease;
+}
+
+@media (hover: hover) {
+    .tile:hover {
+        transform: scale(1.04);
+        border-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* IMAGE */
+.tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    background: #111;
+}
+
+/* NAME OVERLAY */
+.tile-name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: #f7c600;
+    padding: 10px 6px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* YELLOW CORNER (P4G STYLE) */
+.tile::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #f7c600;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 24px 16px;
+    color: #111;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* ---------- TABLET ---------- */
+@media (min-width: 600px) {
+    header {
+        font-size: 22px;
+        padding: 18px 24px;
+    }
+
+    .container {
+        padding: 30px 20px;
+    }
+
+    .grid {
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .tile-name {
+        font-size: 18px;
+    }
+}
+
+/* ---------- DESKTOP ---------- */
+@media (min-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .tile-name {
+        font-size: 22px;
+    }
+}
+
+.tile:active {
+    transform: scale(0.97);
+}

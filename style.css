@@ -137,7 +137,3 @@ footer {
         font-size: 22px;
     }
 }
-
-.tile:active {
-    transform: scale(0.97);
-}

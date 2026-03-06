@@ -1,5 +1,3 @@
 User-agent: *
 Disallow: /pages/
-Disallow: /images/
-Disallow: /pages/css/
-Allow: index.html
+Allow: /index.html
